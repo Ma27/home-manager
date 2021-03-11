@@ -33,7 +33,7 @@ in
           type = types.nullOr types.lines;
           description = ''
             Text of the file. If this option is null then
-            <link linkend="opt-home.file._name_.source">home.file.&lt;name?&gt;.source</link>
+            <link linkend="opt-home-manager.users._name_.home.file._name_.source">home.file.&lt;name?&gt;.source</link>
             must be set.
           '';
         };
@@ -42,7 +42,7 @@ in
           type = types.path;
           description = ''
             Path of the source file or directory. If
-            <link linkend="opt-home.file._name_.text">home.file.&lt;name?&gt;.text</link>
+            <link linkend="opt-home-manager.users._name_.home.file._name_.text">home.file.&lt;name?&gt;.text</link>
             is non-null then this option will automatically point to a file
             containing that text.
           '';

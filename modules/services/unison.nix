@@ -26,7 +26,7 @@ let
         apply = mergeAttrs default;
         default = {
           repeat = "watch";
-          sshcmd = "${pkgs.openssh}/bin/ssh";
+          sshcmd = "\${pkgs.openssh}/bin/ssh";
           ui = "text";
           auto = "true";
           batch = "true";

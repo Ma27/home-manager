@@ -383,7 +383,7 @@ in
         unexpected state is found. For example, the
         <literal>checkLinkTargets</literal> script block checks for
         collisions between non-managed files and files defined in
-        <varname><link linkend="opt-home.file">home.file</link></varname>.
+        <varname><link linkend="opt-home-manager.users._name_.home.file">home.file</link></varname>.
 
         </para><para>
 

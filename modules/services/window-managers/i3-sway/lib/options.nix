@@ -67,7 +67,7 @@ let
         default = null;
         description = ''
           Launch application on a particular workspace. DEPRECATED:
-          Use <varname><link linkend="opt-xsession.windowManager.i3.config.assigns">xsession.windowManager.i3.config.assigns</link></varname>
+          Use <varname><link linkend="opt-home-manager.users._name_.xsession.windowManager.i3.config.assigns">xsession.windowManager.i3.config.assigns</link></varname>
           instead. See <link xlink:href="https://github.com/nix-community/home-manager/issues/265"/>.
         '';
       };
@@ -154,7 +154,7 @@ let
           # If the user uses the "system" Sway (i.e. cfg.package == null) then the bar has
           # to come from a different package
           pkg = if isSway && isNull cfg.package then pkgs.sway else cfg.package;
-        in "${pkg}/bin/${moduleName}bar";
+        in "\${pkg}/bin/\${moduleName}bar";
         defaultText = "i3bar";
         description = "Command that will be used to start a bar.";
         example = if isI3 then
@@ -165,7 +165,7 @@ let
 
       statusCommand = mkNullableOption {
         type = types.str;
-        default = "${pkgs.i3status}/bin/i3status";
+        default = "\${pkgs.i3status}/bin/i3status";
         description = "Command that will be used to get status lines.";
       };
 
@@ -835,17 +835,18 @@ in {
     default = if isI3 then
       "i3-sensible-terminal"
     else
-      "${pkgs.rxvt-unicode-unwrapped}/bin/urxvt";
+      "\${pkgs.rxvt-unicode-unwrapped}/bin/urxvt";
     description = "Default terminal to run.";
     example = "alacritty";
   };
 
   menu = mkOption {
     type = types.str;
-    default = if isSway then
-      "${pkgs.dmenu}/bin/dmenu_path | ${pkgs.dmenu}/bin/dmenu | ${pkgs.findutils}/bin/xargs swaymsg exec --"
-    else
-      "${pkgs.dmenu}/bin/dmenu_run";
+    #default = if isSway then
+      #"${pkgs.dmenu}/bin/dmenu_path | ${pkgs.dmenu}/bin/dmenu | ${pkgs.findutils}/bin/xargs swaymsg exec --"
+    #else
+      #"${pkgs.dmenu}/bin/dmenu_run";
+    default = "dmenu_run";
     description = "Default launcher to use.";
     example = "bemenu-run";
   };

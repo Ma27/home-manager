@@ -246,7 +246,7 @@ in
           }
         '';
         description = ''
-          Similar to <varname><link linkend="opt-programs.zsh.shellAliases">opt-programs.zsh.shellAliases</link></varname>,
+          Similar to <varname><link linkend="opt-home-manager.users._name_.programs.zsh.shellAliases">opt-programs.zsh.shellAliases</link></varname>,
           but are substituted anywhere on a line.
         '';
         type = types.attrsOf types.str;

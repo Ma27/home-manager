@@ -328,7 +328,7 @@ in {
     package = mkOption {
       type = with types; nullOr package;
       default = defaultSwayPackage;
-      defaultText = literalExpression "${pkgs.sway}";
+      defaultText = literalExpression "\${pkgs.sway}";
       description = ''
         Sway package to use. Will override the options
         'wrapperFeatures', 'extraSessionCommands', and 'extraOptions'.
