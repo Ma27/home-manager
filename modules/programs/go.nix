@@ -51,7 +51,7 @@ in {
         in ''
           Extra <envar>GOPATH</envar>s relative to <envar>HOME</envar> appended
           after
-          <varname><link linkend="opt-${goPathOpt}">${goPathOpt}</link></varname>,
+          <varname><link linkend="opt-home-manager.users._name_.${goPathOpt}">${goPathOpt}</link></varname>,
           if that option is set.
         '';
       };

@@ -26,7 +26,7 @@ let
 
       sshCommand = mkOption {
         type = types.str;
-        default = "${pkgs.openssh}/bin/ssh -CTaxq";
+        default = "\${pkgs.openssh}/bin/ssh -CTaxq";
         defaultText = "ssh -CTaxq";
         description = ''
           Specifies a command line to pass to <command>/bin/sh</command>
