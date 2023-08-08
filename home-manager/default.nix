@@ -1,5 +1,5 @@
 { runCommand, lib, bash, callPackage, coreutils, findutils, gettext, gnused
-, less, ncurses, unixtools
+, jq, less, ncurses, unixtools
 # used for pkgs.path for nixos-option
 , pkgs
 
@@ -36,6 +36,7 @@ in runCommand "home-manager" {
         findutils
         gettext
         gnused
+        jq
         less
         ncurses
         nixos-option
